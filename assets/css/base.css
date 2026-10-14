@@ -171,6 +171,7 @@ html[data-theme="nacar"] [data-only]:not([data-only~="nacar"]) { display: none !
 .trust__item span { font-size: .82rem; color: var(--muted); }
 
 /* ---------- Categorías ---------- */
+.cats { padding-bottom: clamp(36px, 5vw, 64px); }
 .cats__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(12px, 2vw, 28px); }
 .cat-card { display: grid; justify-items: center; gap: 14px; text-align: center; }
 .cat-card__media { position: relative; width: 100%; aspect-ratio: var(--cat-ratio, 1); overflow: hidden; border-radius: var(--cat-radius, 50%); background: var(--bg-2); transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; }
