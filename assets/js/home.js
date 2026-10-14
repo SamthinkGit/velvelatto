@@ -3,7 +3,7 @@
   const { $, $$, money, card, observe, stars, icons, addToCart, toast } = VV;
 
   /* ---------- Categorías ---------- */
-  const countFor = (c) => c.id === "personalizados" ? "A tu gusto" : c.id === "packs" ? `${VV.products.filter((p) => p.packs).length} combinables` : `${VV.products.filter((p) => p.cat === c.id).length} modelos`;
+  const countFor = (c) => c.id === "personalizados" ? "A tu gusto" : c.id === "packs" ? `${VV.products.filter((p) => p.packs).length} combinables` : ((n) => `${n} ${n === 1 ? "modelo" : "modelos"}`)(VV.products.filter((p) => p.cat === c.id).length);
   $("#cats").innerHTML = VV.categories.map((c, i) => `
     <a class="cat-card" href="${c.href || `tienda.html?cat=${c.id}`}" data-reveal style="--i:${i}">
       <span class="cat-card__media"><img src="${c.img}" alt="" loading="lazy"></span>
@@ -174,4 +174,7 @@
     addToCart({ id: "custom-" + state.beads.join("-"), name: "Mi aro personalizado", price: price(), img, opts }, svg);
   });
   render();
+
+  // Activar la animación de aparición del contenido generado aquí
+  observe();
 })();

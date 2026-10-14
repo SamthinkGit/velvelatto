@@ -460,3 +460,7 @@
   .hv__circle { left: -8%; }
   .hv__badge { top: -4%; right: -4%; }
 }
+
+/* Safari: las imágenes circulares de categoría dentro de un marco con padding */
+[data-theme="bombon"] .cat-card__media img,
+[data-theme="nacar"] .cat-card__media img { aspect-ratio: 1; height: auto; }
