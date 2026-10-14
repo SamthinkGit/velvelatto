@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es" data-theme="bombon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tienda · Velvelatto</title>
+  <meta name="description" content="Todos los pendientes hechos a mano de Velvelatto: aros, colgantes, mini y divertidos. Desde 8 €.">
+  <meta name="theme-color" content="#FFEDF5">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script src="assets/js/theme-boot.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Fredoka:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&family=Shrikhand&display=swap">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+</head>
+<body data-page="tienda">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container page-head__inner hero-in">
+        <div style="--d:0">
+          <span class="eyebrow">Hechos a mano · desde 8 €</span>
+          <h1>Tienda</h1>
+          <p>Todos nuestros pendientes se pueden personalizar: metal, cierre, color de las piedras e inicial.</p>
+        </div>
+        <nav class="crumbs" aria-label="Migas de pan" style="--d:1"><a href="index.html">Inicio</a><span>›</span><span>Tienda</span></nav>
+      </div>
+    </section>
+
+    <div class="container shop">
+      <aside class="filters" id="filters" aria-label="Filtros">
+        <button class="icon-btn filter-close" data-close-filters aria-label="Cerrar filtros" style="justify-self:end" hidden><span data-icon="close"></span></button>
+        <div class="filter-box filter-box--selected">
+          <h3>Has seleccionado</h3>
+          <div class="selected-list" id="selected"></div>
+          <button class="btn btn--sm btn--block" id="clear-all">Borrar todo</button>
+        </div>
+        <div class="filter-box">
+          <h3>Precio</h3>
+          <div class="range">
+            <div class="range__track"><div class="range__fill" id="range-fill"></div></div>
+            <input type="range" id="min-price" min="5" max="20" step="1" value="5" aria-label="Precio mínimo">
+            <input type="range" id="max-price" min="5" max="20" step="1" value="20" aria-label="Precio máximo">
+          </div>
+          <div class="range-values"><span id="min-label">5 €</span><span id="max-label">20 €</span></div>
+        </div>
+        <div class="filter-box">
+          <h3>Categoría</h3>
+          <div id="cat-filter"></div>
+        </div>
+        <div class="filter-box">
+          <h3>Metal</h3>
+          <label class="check"><input type="checkbox" name="metal" value="oro">Baño de oro<em id="metal-oro"></em></label>
+          <label class="check"><input type="checkbox" name="metal" value="plata">Plata 925<em id="metal-plata"></em></label>
+        </div>
+        <div class="filter-box">
+          <h3>Color</h3>
+          <div class="color-filter" id="color-filter"></div>
+        </div>
+      </aside>
+
+      <section>
+        <div class="toolbar">
+          <span class="toolbar__count" id="count"></span>
+          <div class="toolbar__right">
+            <button class="btn btn--ghost btn--sm filter-toggle" data-open-filters><span data-icon="filter"></span>Filtros</button>
+            <label class="sr-only" for="sort">Ordenar</label>
+            <select class="select" id="sort">
+              <option value="featured">Destacados</option>
+              <option value="new">Novedades</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="rating">Mejor valorados</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-products grid-products--shop" id="shop-grid"></div>
+        <div class="pagination" id="progress" style="justify-content:center;flex-direction:column;align-items:center;gap:10px;text-align:center"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>
